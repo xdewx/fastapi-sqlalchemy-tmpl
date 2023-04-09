@@ -4,7 +4,7 @@
 #
 # Author: leoking
 # Date: 2023-04-08 14:24:46
-# LastEditTime: 2023-04-08 16:37:26
+# LastEditTime: 2023-04-10 01:53:52
 # LastEditors: leoking
 # Description:
 #
@@ -45,3 +45,10 @@ async def test_db():
     )
     db.session.add(TestModel(name="xxxxxx"))
     return db.session.query(TestModel).all()
+
+
+if __name__ == "__main__":
+    import uvicorn, sys
+
+    print(sys.path)
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=False)
