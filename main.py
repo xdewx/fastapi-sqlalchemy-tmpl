@@ -4,7 +4,7 @@
 #
 # Author: leoking
 # Date: 2023-04-08 14:24:46
-# LastEditTime: 2023-04-10 01:53:52
+# LastEditTime: 2023-04-12 01:47:30
 # LastEditors: leoking
 # Description:
 #
@@ -48,7 +48,12 @@ async def test_db():
 
 
 if __name__ == "__main__":
-    import uvicorn, sys
+    from argparse import ArgumentParser
 
-    print(sys.path)
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=False)
+    parser = ArgumentParser()
+    parser.add_argument("-d", "--debug", action="store_true", default=False)
+    args = parser.parse_args()
+
+    import uvicorn
+
+    uvicorn.run("main:app", host='127.0.0.1', port=8000, reload=args.debug)
