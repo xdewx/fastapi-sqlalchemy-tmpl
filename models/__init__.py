@@ -4,8 +4,8 @@
 #
 # Author: leoking
 # Date: 2023-04-08 16:01:35
-#LastEditTime: 2023-04-08 16:35:58
-#LastEditors: leoking
+# LastEditTime: 2023-04-12 01:50:42
+# LastEditors: leoking
 # Description:
 #
 from typing import Optional
@@ -17,7 +17,7 @@ from sqlalchemy import Integer, String, Column
 Base = declarative_base()
 
 
-class TestModel(Base):
+class TestTable(Base):
     __tablename__ = 'test'
     id = Column(Integer, primary_key=True)
     name = Column(String(16))
